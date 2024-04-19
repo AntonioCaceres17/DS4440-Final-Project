@@ -45,15 +45,20 @@
 <br>
 In their study "Your Diffusion Model is Secretly a Zero-Shot Classifier," Alexander C. Li et al. explore a novel use of diffusion models that extends their application to zero-shot classification challenges without further training outside of the generating domain. Diffusion models are well-known for their capacity to produce excellent pictures by simulating a data distribution by adding and eliminating noise. By using the conditional density estimates they offer, their research reveals their promise in classification challenges, a unique method of using generative models for discriminative tasks.
 <br>
+<br>
 Leveraging the class-conditional generating capabilities of these models, the authors provide an innovative approach known as the Diffusion Classifier. Effectively using the reconstructed data fidelity as a proxy for class likelihood, the model evaluates the probability of the input data under each class label and conditions the diffusion process on those class labels. With this technique, a generative process becomes a discriminative task that enables the model to do zero-shot classification by evaluating which class condition best recovers the original input from its noisy state.
+<br>
 <br>
 Main Takeaways:
 <br>
 Versatility of Diffusion Models: This work shows how diffusion models may be used in real-world AI problems as they can not only generate pictures but also identify them with great accuracy.
 <br>
+<br>
 Diffusion models' inherent capabilities are used to enable zero-shot learning, in which the model uses solely class-conditional generative processes to categorize pictures into categories it has not seen during training.
 <br>
+<br>
 Comparative Advantage: The Diffusion Classifier performs remarkably well on a number of tests, especially in compositional reasoning tasks where it outperforms conventional discriminative and generative models. This suggests its great promise in jobs needing in-depth semantic comprehension.
+<br>
 <br>
 Relation to Our Project:
 <br>
