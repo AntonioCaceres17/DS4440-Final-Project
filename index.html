@@ -116,23 +116,23 @@ We use the generating power of diffusion models to the zero-shot categorization 
  <br>
 The subsequent phases make up the technological framework of our implementation:
 <br><br>
-Model Selection: We choose the diffusers library's StableDiffusionPipeline, which is well-known for producing realistic visuals. Because the model was pre-trained on a varied dataset, zero-shot learning requires that it be able to comprehend a broad range of ideas and objects.
+<b>Model Selection:</b> We choose the diffusers library's StableDiffusionPipeline, which is well-known for producing realistic visuals. Because the model was pre-trained on a varied dataset, zero-shot learning requires that it be able to comprehend a broad range of ideas and objects.
 <br><br>
- Pre-processing: The diffusion model predicts an input distribution that is matched by normalizing CIFAR10 pictures. Correct operation of the picture generating procedure that follows depends on this normalization.
+ <b>Pre-processing:</b> The diffusion model predicts an input distribution that is matched by normalizing CIFAR10 pictures. Correct operation of the picture generating procedure that follows depends on this normalization.
 <br><br>
- Image Generation: We produce an image from a class-related verbal prompt for every class label in CIFAR10. These suggestions help the model to create a picture that best captures the traits of the class.
+ <b>Image Generation:</b> We produce an image from a class-related verbal prompt for every class label in CIFAR10. These suggestions help the model to create a picture that best captures the traits of the class.
 <br><br>
- Image Comparison: We employ Mean Squared Error (MSE) as a measure of similarity between the CIFAR10 images and the generated images. For each input image, the predicted class is the one with the lowest MSE loss between the produced and the real image.
+<b> Image Comparison:</b> We employ Mean Squared Error (MSE) as a measure of similarity between the CIFAR10 images and the generated images. For each input image, the predicted class is the one with the lowest MSE loss between the produced and the real image.
 <br><br>
- Device Management: The generating and comparing operations are much accelerated by the calculations being done on a GPU when one is available. This enables the hard jobs of picture synthesis and analysis to be handled by using the parallel processing capabilities of contemporary GPUs.
+ <b>Device Management:</b> The generating and comparing operations are much accelerated by the calculations being done on a GPU when one is available. This enables the hard jobs of picture synthesis and analysis to be handled by using the parallel processing capabilities of contemporary GPUs.
 <br><br>
- Implementation Details
+ <b>Implementation Details</b>
 <br>
- Data loading: The torchvision library is used to load CIFAR10 pictures as it offers machine learning models easily standardized datasets.
+ <b>Data loading:</b> The torchvision library is used to load CIFAR10 pictures as it offers machine learning models easily standardized datasets.
 <br>
- Transformations: The photos are transformed using a combination of ToTensor and Normalize to make sure they work with the anticipated input format of the model.
-<br>
- Model Invocation: An image output is produced by the StableDiffusionPipeline, which asks for a textual prompt.
+ <b>Transformations:</b> The photos are transformed using a combination of ToTensor and Normalize to make sure they work with the anticipated input format of the model.
+<br><br>
+ <b>Model Invocation:</b> An image output is produced by the StableDiffusionPipeline, which asks for a textual prompt.
 <br>
  Performance Aspects to Remember The pipeline is built with performance in mind throughout. Batch-able operations are combined to reduce GPU context switching cost, and CPU-GPU memory transfers are minimized to prevent bottlenecks.
 <br><br>
@@ -155,9 +155,10 @@ We hope to give a clear idea of how the diffusion model may be modified for clas
 </p>
 
 <h2> Section 4: Experimental Findings</h2>
+ <br>
 <p> 
 Here we report the experimental results of our diffusion model-based zero-shot categorization. We investigate the distribution of the predictions made by our model across several classes and evaluate the performance of our approach against a baseline model using a set of visualizations.
-<br>
+<br><br>
 <b>Model Accuracy Comparison</b>
 <br>
 The 10 epoch accuracy trends of our diffusion model-based classifier against a baseline model are shown in the line chart above. It is shown that the diffusion model continuously outperforms the baseline, exhibiting increased stability across succeeding epochs in addition to superior accuracy. Higher performance variance in the baseline model might be a sign of its sensitivity to the training data or of its less generalization potential than our approach.
