@@ -109,7 +109,50 @@ Our effort is centered on this publication as we want to duplicate and expand th
 </p>
 
 <h2> Section 3: Technical Structure</h2>
-<p> This section describes the technical structure of your method or implementation. It should be concise, limited to one screenful of webpage text. An architectural figure and a pointer to the code of the implementation may be included.</p>
+<p>
+We use the generating power of diffusion models to the zero-shot categorization problem. We are able to produce images based on verbal prompts that match to CIFAR10 class labels and compare them to real photographs for classification by using the pre-trained Stable Diffusion model.
+<br><br>
+<b>Methodology</b>
+ <br>
+The subsequent phases make up the technological framework of our implementation:
+<br><br>
+Model Selection: We choose the diffusers library's StableDiffusionPipeline, which is well-known for producing realistic visuals. Because the model was pre-trained on a varied dataset, zero-shot learning requires that it be able to comprehend a broad range of ideas and objects.
+<br><br>
+ Pre-processing: The diffusion model predicts an input distribution that is matched by normalizing CIFAR10 pictures. Correct operation of the picture generating procedure that follows depends on this normalization.
+<br><br>
+ Image Generation: We produce an image from a class-related verbal prompt for every class label in CIFAR10. These suggestions help the model to create a picture that best captures the traits of the class.
+<br><br>
+ Image Comparison: We employ Mean Squared Error (MSE) as a measure of similarity between the CIFAR10 images and the generated images. For each input image, the predicted class is the one with the lowest MSE loss between the produced and the real image.
+<br><br>
+ Device Management: The generating and comparing operations are much accelerated by the calculations being done on a GPU when one is available. This enables the hard jobs of picture synthesis and analysis to be handled by using the parallel processing capabilities of contemporary GPUs.
+<br><br>
+ Implementation Details
+<br>
+ Data loading: The torchvision library is used to load CIFAR10 pictures as it offers machine learning models easily standardized datasets.
+<br>
+ Transformations: The photos are transformed using a combination of ToTensor and Normalize to make sure they work with the anticipated input format of the model.
+<br>
+ Model Invocation: An image output is produced by the StableDiffusionPipeline, which asks for a textual prompt.
+<br>
+ Performance Aspects to Remember The pipeline is built with performance in mind throughout. Batch-able operations are combined to reduce GPU context switching cost, and CPU-GPU memory transfers are minimized to prevent bottlenecks.
+<br><br>
+ <b>Code Availability</b>
+ <br>
+ All of the code for our implementation—data processing, model interaction, and classification logic—is available on GitHub at this link:
+
+ Transparency and repeatability of our findings are ensured by the scripts and instructions included in this repository to duplicate our study.
+
+
+ <b>Architectural Diagram</b>
+
+ If your method's technical framework is represented by an architectural diagram, you may include it here.
+
+We hope to give a clear idea of how the diffusion model may be modified for classification problems by outlining the technical framework of our technique and emphasizing the stages and reasoning behind our approach.
+
+
+
+ 
+</p>
 
 <h2> Section 4: Experimental Findings</h2>
 <p> 
