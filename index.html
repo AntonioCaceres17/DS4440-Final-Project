@@ -112,8 +112,37 @@ Our effort is centered on this publication as we want to duplicate and expand th
 <p> This section describes the technical structure of your method or implementation. It should be concise, limited to one screenful of webpage text. An architectural figure and a pointer to the code of the implementation may be included.</p>
 
 <h2> Section 4: Experimental Findings</h2>
-<p> This section reports on the experimental findings, including graphs or images that visualize the results. It should ideally include a baseline comparison, or an ablation study comparing your method to a simpler version of itself.</p>
+<p> 
+Here we report the experimental results of our diffusion model-based zero-shot categorization. We investigate the distribution of the predictions made by our model across several classes and evaluate the performance of our approach against a baseline model using a set of visualizations.
+<br>
+<b>Model Accuracy Comparison</b>
+<br>
+The 10 epoch accuracy trends of our diffusion model-based classifier against a baseline model are shown in the line chart above. It is shown that the diffusion model continuously outperforms the baseline, exhibiting increased stability across succeeding epochs in addition to superior accuracy. Higher performance variance in the baseline model might be a sign of its sensitivity to the training data or of its less generalization potential than our approach.
+<br><br>
+<b>Prediction Distribution Across Classes</b>
+<br>
+The class prediction frequencies of our model are shown by the bar chart. We find that there is no appreciable bias in any one class and that predictions are distributed somewhat uniformly among them. A little greater frequency of some classes, such "frog" and "truck," would call for more research on the class representations in the training dataset.
+<br><br>
+<b>Confusion Matrix</b>
+ <br>
+A comprehensive picture of the classifier's performance over all classes is provided by the confusion matrix. It emphasizes that whereas classes like "ship" and "horse" are categorized rather precisely, classes like "cat" and "dog" are sometimes misclassified as the same thing. This could imply that the model finds it difficult to classify classes with visually similar characteristics, in which case increasing the variety or amount of training data in these domains might be helpful.
+<br><br>
+<b>Discussion</b>
+ <br>
+The results of the experiments confirm that a diffusion model works well for zero-shot categorization problems. The ability of our technique to continuously maintain high accuracy implies that it has learnt strong feature representations that are less susceptible to changes in the input data. The prediction distribution validates the lack of excessive bias in our model against particular classes. But the confusion matrix offers useful information about where the model's classification skills may be strengthened, especially in identifying classes with comparable characteristics.
+<br><br>
+<b>Implications</b>
+ <br>
+The diffusion model's correctness and stability suggest it to be appropriate for practical applications where dependability and robustness are essential. Even more dependable performance may be ensured by additional model improvement guided by the insights obtained from the confusion matrix. Furthermore encouraging for jobs demanding fair treatment of several classes is the model's uniform class prediction distribution.
+<br><br>
+<b>Future Work</b>
+ <br>
+Future research might look at methods to reduce misunderstanding between certain classes, maybe by using augmentation techniques or focused data collecting. Furthermore validating our approach's adaptability and scalability would be expanding it to larger classes and more complicated datasets.
+<br>
+</p>
 
+
+ 
 <h2> Section 5: Conclusions</h2>
 <p> This section contains a summary of your conclusions, discussing any implications for applications or societal impacts, and ideas for future work.</p>
 
