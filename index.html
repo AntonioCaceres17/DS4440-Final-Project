@@ -144,18 +144,10 @@ The subsequent phases make up the technological framework of our implementation:
  <b>Code Availability</b>
  <br>
  All of the code for our implementation—data processing, model interaction, and classification logic—is available on GitHub at this link:
-
+ <br>
+<a href="https://github.com/AntonioCaceres17/DiffusionZeroShotClassifier/blob/main/final_project.ipynb">Python Notebook</a>
+ <br>
  Transparency and repeatability of our findings are ensured by the scripts and instructions included in this repository to duplicate our study.
-
-
- <b>Architectural Diagram</b>
-
- If your method's technical framework is represented by an architectural diagram, you may include it here.
-
-We hope to give a clear idea of how the diffusion model may be modified for classification problems by outlining the technical framework of our technique and emphasizing the stages and reasoning behind our approach.
-
-
-
  
 </p>
 
@@ -167,15 +159,20 @@ Here we report the experimental results of our diffusion model-based zero-shot c
 <b>Model Accuracy Comparison</b>
 <br>
 The 10 epoch accuracy trends of our diffusion model-based classifier against a baseline model are shown in the line chart above. It is shown that the diffusion model continuously outperforms the baseline, exhibiting increased stability across succeeding epochs in addition to superior accuracy. Higher performance variance in the baseline model might be a sign of its sensitivity to the training data or of its less generalization potential than our approach.
-<br><br>
+<br>
+ <img src="Model_Accuracy" alt="Trulli" width="500" height="333">
+ <br>
 <b>Prediction Distribution Across Classes</b>
 <br>
 The class prediction frequencies of our model are shown by the bar chart. We find that there is no appreciable bias in any one class and that predictions are distributed somewhat uniformly among them. A little greater frequency of some classes, such "frog" and "truck," would call for more research on the class representations in the training dataset.
-<br><br>
+<br>
+ <img src="Prediction_Classifier" alt="Trulli" width="500" height="333">
+ <br>
 <b>Confusion Matrix</b>
  <br>
 A comprehensive picture of the classifier's performance over all classes is provided by the confusion matrix. It emphasizes that whereas classes like "ship" and "horse" are categorized rather precisely, classes like "cat" and "dog" are sometimes misclassified as the same thing. This could imply that the model finds it difficult to classify classes with visually similar characteristics, in which case increasing the variety or amount of training data in these domains might be helpful.
-<br><br>
+<br>
+ <img src="Confusion_Matrix" alt="Trulli" width="500" height="333"><br>
 <b>Discussion</b>
  <br>
 The results of the experiments confirm that a diffusion model works well for zero-shot categorization problems. The ability of our technique to continuously maintain high accuracy implies that it has learnt strong feature representations that are less susceptible to changes in the input data. The prediction distribution validates the lack of excessive bias in our model against particular classes. But the confusion matrix offers useful information about where the model's classification skills may be strengthened, especially in identifying classes with comparable characteristics.
