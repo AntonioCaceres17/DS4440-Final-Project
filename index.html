@@ -162,17 +162,20 @@ The 10 epoch accuracy trends of our diffusion model-based classifier against a b
 <br>
  <img src="Model_Accuracy" alt="Trulli" width="500" height="333">
  <br>
+  <br>
 <b>Prediction Distribution Across Classes</b>
 <br>
 The class prediction frequencies of our model are shown by the bar chart. We find that there is no appreciable bias in any one class and that predictions are distributed somewhat uniformly among them. A little greater frequency of some classes, such "frog" and "truck," would call for more research on the class representations in the training dataset.
 <br>
  <img src="Prediction_Classifier" alt="Trulli" width="500" height="333">
+  <br>
  <br>
 <b>Confusion Matrix</b>
  <br>
 A comprehensive picture of the classifier's performance over all classes is provided by the confusion matrix. It emphasizes that whereas classes like "ship" and "horse" are categorized rather precisely, classes like "cat" and "dog" are sometimes misclassified as the same thing. This could imply that the model finds it difficult to classify classes with visually similar characteristics, in which case increasing the variety or amount of training data in these domains might be helpful.
 <br>
  <img src="Confusion_Matrix" alt="Trulli" width="500" height="333"><br>
+  <br>
 <b>Discussion</b>
  <br>
 The results of the experiments confirm that a diffusion model works well for zero-shot categorization problems. The ability of our technique to continuously maintain high accuracy implies that it has learnt strong feature representations that are less susceptible to changes in the input data. The prediction distribution validates the lack of excessive bias in our model against particular classes. But the confusion matrix offers useful information about where the model's classification skills may be strengthened, especially in identifying classes with comparable characteristics.
